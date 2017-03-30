@@ -88,4 +88,28 @@ public class StudenteDAO {
 			throw new RuntimeException("Errore Db");
 		}
 	}
+	
+	public boolean getStudenteIscritto(String matricola, Corso corso) {
+		final String sql = "SELECT ? " +
+					"FROM iscrizione "+
+					"WHERE matricola=?";
+		boolean isIscritto=false;
+		try {
+			Connection conn = ConnectDB.getConnection();
+			PreparedStatement st = conn.prepareStatement(sql);
+			st.setString(1, corso.getCodIns());
+			st.setString(2, matricola);
+			ResultSet rs = st.executeQuery();
+
+			if (rs.next()) {
+				isIscritto=true;
+			}
+			return isIscritto;
+		} catch (SQLException e) {
+			// e.printStackTrace();
+			throw new RuntimeException("Errore Db");
+		}
+	}
+	
+	
 }

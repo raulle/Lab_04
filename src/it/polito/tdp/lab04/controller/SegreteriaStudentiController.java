@@ -103,7 +103,12 @@ public class SegreteriaStudentiController {
 
 	@FXML
 	void doIscrivi(ActionEvent event) {
-
+		Corso c=comboCorso.getValue();
+		String matricola= txtMatricola.getText();
+		if(model.getIsIscritto(matricola, c))
+			txtResult.setText("Studente iscritto, coglione");
+		else
+			txtResult.setText("Studente non iscritto, coglione");
 	}
 
 	@FXML

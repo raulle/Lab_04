@@ -41,4 +41,9 @@ public class Model {
 		StudenteDAO dao = new StudenteDAO();
 		return dao.getCorsiIscritto(matricola);
 	}
+	
+	public boolean getIsIscritto(String matricola, Corso corso){
+		StudenteDAO dao = new StudenteDAO();
+		return dao.getStudenteIscritto(matricola, corso);
+	}
 }

@@ -18,7 +18,8 @@ public class TestModel {
 		List<Studente> c = m.getIscrittiCorso(new Corso("02CIXPG","","",""));
 		System.out.println(c);
 		List<Corso> c = m.getCorsiIscritto("146101");
-		System.out.println(c);*/
+		System.out.println(c);
+		System.out.println(m.getIsIscritto("146101", new Corso("02CIXPG","","","")));*/
 	}
 
 }

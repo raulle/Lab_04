@@ -19,14 +19,12 @@ public class Model {
 	
 	public List<Corso> addCorsi(){
 		CorsoDAO dao = new CorsoDAO();
-		corsi=dao.getTuttiICorsi();
-		return corsi;
+		return corsi=dao.getTuttiICorsi();
 	}
 
 	public List<Studente> addStudenti(){
 		StudenteDAO dao = new StudenteDAO();
-		studenti=dao.getTuttiICorsi();
-		return studenti;
+		return studenti=dao.getTuttiICorsi();
 	}
 	
 	public Studente cercaNome(String matricola){
@@ -37,5 +35,10 @@ public class Model {
 	public List<Studente> getIscrittiCorso(Corso corso){
 		CorsoDAO dao = new CorsoDAO();
 		return dao.getStudentiIscrittiAlCorso(corso);
+	}
+	
+	public List<Corso> getCorsiIscritto(String matricola){
+		StudenteDAO dao = new StudenteDAO();
+		return dao.getCorsiIscritto(matricola);
 	}
 }

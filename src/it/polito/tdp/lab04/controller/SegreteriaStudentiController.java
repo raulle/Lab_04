@@ -77,7 +77,7 @@ public class SegreteriaStudentiController {
 	void doCercaIscrittiCorso(ActionEvent event) {
 		Corso c = comboCorso.getValue();
 		if(c.equals(new Corso("","","","")))
-			txtResult.setText("Seleziona il corso coglione");
+			txtResult.setText("Seleziona il corso, coglione");
 		for(Studente s : studenti){
 			for(Studente st : model.getIscrittiCorso(c)){
 				if(s.getMatricola().equals(st.getMatricola()))
@@ -89,7 +89,16 @@ public class SegreteriaStudentiController {
 
 	@FXML
 	void doCercaCorsi(ActionEvent event) {
-
+		String matricola=txtMatricola.getText();
+		Studente s=model.cercaNome(matricola);
+		if(!studenti.contains(s))
+			txtResult.setText("Non esiste, coglione");
+		for(Corso c : corsi){
+			for(Corso co : model.getCorsiIscritto(matricola)){
+				if(c.getCodIns().equals(co.getCodIns()))
+					txtResult.appendText(c.toString());
+			}
+		}
 	}
 
 	@FXML

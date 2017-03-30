@@ -72,14 +72,18 @@ public class SegreteriaStudentiController {
 		txtNome.setText(s.getNome());
 		txtCognome.setText(s.getCognome());
 	}
-	
-	
-	
-	
 
 	@FXML
 	void doCercaIscrittiCorso(ActionEvent event) {
 		Corso c = comboCorso.getValue();
+		if(c.equals(new Corso("","","","")))
+			txtResult.setText("Seleziona il corso coglione");
+		for(Studente s : studenti){
+			for(Studente st : model.getIscrittiCorso(c)){
+				if(s.getMatricola().equals(st.getMatricola()))
+					txtResult.appendText(s.toString());
+			}
+		}
 
 	}
 

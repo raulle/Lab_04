@@ -33,4 +33,9 @@ public class Model {
 		StudenteDAO dao= new StudenteDAO();
 		return dao.cercaStudente(matricola);
 	}
+	
+	public List<Studente> getIscrittiCorso(Corso corso){
+		CorsoDAO dao = new CorsoDAO();
+		return dao.getStudentiIscrittiAlCorso(corso);
+	}
 }

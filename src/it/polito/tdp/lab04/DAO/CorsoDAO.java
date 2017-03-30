@@ -30,7 +30,7 @@ public class CorsoDAO {
 
 			while (rs.next()) {
 
-				Corso c = new Corso(rs.getString("codins"),rs.getInt("crediti"),rs.getString("nome"),rs.getInt("pd"));// Crea un nuovo JAVA Bean Corso
+				Corso c = new Corso(rs.getString("codins"),rs.getString("crediti"),rs.getString("nome"),rs.getString("pd"));// Crea un nuovo JAVA Bean Corso
 				corsi.add(c);// Aggiungi il nuovo Corso alla lista
 			}
 

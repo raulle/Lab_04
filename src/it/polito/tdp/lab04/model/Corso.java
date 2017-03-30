@@ -3,11 +3,11 @@ package it.polito.tdp.lab04.model;
 public class Corso {
 	
 	private String codIns;
-	private int crediti;
+	private String crediti;
 	private String nome;
-	private int pd;
+	private String pd;
 	
-	public Corso(String codIns, int crediti, String nome, int pd) {
+	public Corso(String codIns, String crediti, String nome, String pd) {
 		super();
 		this.codIns = codIns;
 		this.crediti = crediti;
@@ -23,11 +23,11 @@ public class Corso {
 		this.codIns = codIns;
 	}
 
-	public int getCrediti() {
+	public String getCrediti() {
 		return crediti;
 	}
 
-	public void setCrediti(int crediti) {
+	public void setCrediti(String crediti) {
 		this.crediti = crediti;
 	}
 
@@ -39,11 +39,11 @@ public class Corso {
 		this.nome = nome;
 	}
 
-	public int getPd() {
+	public String getPd() {
 		return pd;
 	}
 
-	public void setPd(int pd) {
+	public void setPd(String pd) {
 		this.pd = pd;
 	}
 
@@ -52,9 +52,9 @@ public class Corso {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((codIns == null) ? 0 : codIns.hashCode());
-		result = prime * result + crediti;
+		result = prime * result + ((crediti == null) ? 0 : crediti.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		result = prime * result + pd;
+		result = prime * result + ((pd == null) ? 0 : pd.hashCode());
 		return result;
 	}
 
@@ -86,7 +86,7 @@ public class Corso {
 
 	@Override
 	public String toString() {
-		return "codIns=" + codIns + ", crediti=" + crediti + ", nome=" + nome + ", pd=" + pd + "\n";
+		return codIns+" "+ crediti + " " + nome + " " + pd + "\n";
 	}
 
 

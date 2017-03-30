@@ -52,6 +52,7 @@ public class SegreteriaStudentiController {
 
 	public void setModel(Model model) {
 		this.model=model;
+		corsi.add(new Corso("","","",""));
 		for(Corso c : model.addCorsi())
 			corsi.add(c);
 		comboCorso.getItems().addAll(corsi);
